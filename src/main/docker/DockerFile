@@ -1,0 +1,9 @@
+FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
+LABEL maintainer=Sravani@gmail.com
+
+EXPOSE 9080
+VOLUME /tmp
+
+COPY build/archives/healthcare-0.0.1-SNAPSHOT.jar /healthcare-service.jar
+
+CMD [ "java", "-jar", "/healthcare-service.jar" ]
